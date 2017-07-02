@@ -1,47 +1,43 @@
 import java.util.Scanner;
 
 public class Fibonachi {
-  public static void main (String[] args) {
+  public int number_int;
+  public void InputNumber() {
     System.out.println("Please enter a number:");
     Scanner number = new Scanner(System.in);
-    String string = number.next();
-    int number_int = Integer.parseInt(string);
+    String stringWithNumber = number.next();
+    number_int = Integer.parseInt(stringWithNumber);
+  }
+  public boolean TestFibonachi() {
     int firstNumber = 1;
     int secondNumber = 1;
     int thirdNumber = 1;
-    int countNumberFebonacci = 0;
-    int numberForTest = 0; 
     boolean resultOfTest = false;
     if (number_int == 0 || number_int == 1 || number_int == -1) {
-      System.out.println("It's number of sequence Febonachi");
-    } else {
-      if (number_int < 0) {
-        numberForTest = number_int * (-1);
-      } else {
-        numberForTest = number_int;
-      }   
-      for (int i = 1; i <= numberForTest; i++) {
+      resultOfTest = true;
+    } else {   
+      for (int i = 1; i <= number_int; i++) {
         secondNumber = firstNumber;
         firstNumber = thirdNumber;
-        thirdNumber = firstNumber + secondNumber;
-        countNumberFebonacci = i;			
-        if (thirdNumber == numberForTest) {
+        thirdNumber = firstNumber + secondNumber;			
+        if (thirdNumber == number_int) {
           resultOfTest = true;
           break;
         }			
-      }
-      if (resultOfTest == true) {
-        if (number_int == numberForTest * Math.pow((-1), (countNumberFebonacci + 2 + 1)) && number_int < 0) {
-          System.out.println("It's a negative number of sequence Febonachi");
-        } else {
-          System.out.println("It isn't number of sequence Febonachi");
-        }
-        if (number_int > 0) {
-          System.out.println("It's number of sequence Febonachi");
-        }
-      } else {
-        System.out.println("It isn't number of sequence Febonachi");
-      }
-    }		
+      }	
+    }	
+	  return resultOfTest;
+  }
+  public void OutputResult (Boolean resultOfTest) {
+	  if (resultOfTest == true) {
+      System.out.println("It's number of sequence Febonachi");
+    } else {
+      System.out.println("It isn't number of sequence Febonachi");
+    }  
+  }
+  public static void main (String[] args) {
+	  Fibonachi fibonachiNumber = new Fibonachi();
+    fibonachiNumber.InputNumber();
+    fibonachiNumber.OutputResult(fibonachiNumber.TestFibonachi());      	
   }
 }
