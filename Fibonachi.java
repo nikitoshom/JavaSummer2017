@@ -26,17 +26,17 @@ public class Fibonachi {
         }			
       }	
     }	
-	  return resultOfTest;
+    return resultOfTest;
   }
   public void OutputResult (Boolean resultOfTest) {
-	  if (resultOfTest == true) {
+    if (resultOfTest == true) {
       System.out.println("It's number of sequence Febonachi");
     } else {
       System.out.println("It isn't number of sequence Febonachi");
     }  
   }
   public static void main (String[] args) {
-	  Fibonachi fibonachiNumber = new Fibonachi();
+    Fibonachi fibonachiNumber = new Fibonachi();
     fibonachiNumber.InputNumber();
     fibonachiNumber.OutputResult(fibonachiNumber.TestFibonachi());      	
   }
