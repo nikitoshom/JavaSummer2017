@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class Fibonachi {
-  int number_int;
-  public void InputNumber() {
+  public int InputNumber() {
     System.out.println("Please enter a number:");
     Scanner number = new Scanner(System.in);
     String stringWithNumber = number.next();
-    number_int = Integer.parseInt(stringWithNumber);
+    int number_int = Integer.parseInt(stringWithNumber);
+    return number_int;
   }
   
-  public boolean TestFibonachi() {
+  public boolean TestFibonachi(int number_int) {
     int firstNumber = 1;
     int secondNumber = 1;
     int thirdNumber = 1;
     boolean resultOfTest = false;
-    if (number_int == 0 || number_int == 1 || number_int == -1) {
+    if (number_int == 0 || number_int == 1) {
       resultOfTest = true;
     } else {   
       for (int i = 1; i <= number_int; i++) {
@@ -40,7 +40,6 @@ public class Fibonachi {
   
   public static void main (String[] args) {
     Fibonachi fibonachiNumber = new Fibonachi();
-    fibonachiNumber.InputNumber();
-    fibonachiNumber.OutputResult(fibonachiNumber.TestFibonachi());      	
+    fibonachiNumber.OutputResult(fibonachiNumber.TestFibonachi(fibonachiNumber.InputNumber()));      	
   }
 }
