@@ -5,23 +5,23 @@ public class Fibonachi {
     System.out.println("Please enter a number:");
     Scanner number = new Scanner(System.in);
     String stringWithNumber = number.next();
-    int number_int = Integer.parseInt(stringWithNumber);
-    return number_int;
+    int numberInt = Integer.parseInt(stringWithNumber);
+    return numberInt;
   }
   
-  public boolean TestFibonachi(int number_int) {
+  public boolean TestFibonachi(int numberInt) {
     int firstNumber = 1;
     int secondNumber = 1;
     int thirdNumber = 1;
     boolean resultOfTest = false;
-    if (number_int == 0 || number_int == 1) {
+    if (numberInt == 0 || numberInt == 1) {
       resultOfTest = true;
     } else {   
-      for (int i = 1; i <= number_int; i++) {
+      for (int i = 1; i <= numberInt; i++) {
         secondNumber = firstNumber;
         firstNumber = thirdNumber;
         thirdNumber = firstNumber + secondNumber;			
-        if (thirdNumber == number_int) {
+        if (thirdNumber == numberInt) {
           resultOfTest = true;
           break;
         }			
