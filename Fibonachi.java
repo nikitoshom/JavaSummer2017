@@ -1,37 +1,37 @@
+/**
+ * This program checks whether the number entered from the keyboard is a nonnegative number of sequence Fibonachi.
+ */
 import java.util.Scanner;
 
 public class Fibonachi {
   public int InputNumber() {
     System.out.println("Please enter a number:");
     Scanner number = new Scanner(System.in);
-    String stringWithNumber = number.next();
-    int numberInt = Integer.parseInt(stringWithNumber);
+    int numberInt = number.nextInt();
     return numberInt;
   }
   
   public boolean TestFibonachi(int numberInt) {
-    int firstNumber = 1;
-    int secondNumber = 1;
-    int thirdNumber = 1;
-    boolean resultOfTest = false;
     if (numberInt == 0 || numberInt == 1) {
-      resultOfTest = true;
-    } else {   
+      return true;
+    } else { 
+      int firstNumber = 1;
+      int secondNumber = 1;
+      int thirdNumber = 1;
       for (int i = 1; i <= numberInt; i++) {
         secondNumber = firstNumber;
         firstNumber = thirdNumber;
         thirdNumber = firstNumber + secondNumber;			
         if (thirdNumber == numberInt) {
-          resultOfTest = true;
-          break;
+          return true;
         }			
       }	
     }	
-    return resultOfTest;
+    return false;
   }
   
   public void OutputResult (Boolean resultOfTest) {
-    if (resultOfTest == true) {
+    if (resultOfTest) {
       System.out.println("It's number of sequence Febonachi");
     } else {
       System.out.println("It isn't number of sequence Febonachi");
