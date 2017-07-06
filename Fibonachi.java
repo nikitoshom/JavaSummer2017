@@ -1,8 +1,8 @@
+import java.util.Scanner;
+
 /**
  * This program checks whether the number entered from the keyboard is a nonnegative number of sequence Fibonachi.
  */
-import java.util.Scanner;
-
 public class Fibonachi {
   public int InputNumber() {
     System.out.println("Please enter a number:");
