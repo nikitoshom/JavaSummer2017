@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 /**
-*  This program checks whether the sequence of numbers entered from the keyboard is decreasing or increasing
-*/
-
+ *  This program checks whether the sequence of numbers entered from the keyboard is decreasing or increasing
+ */
 public class Sequence {
   public static void main (String[] args) {
     System.out.println("Please enter sequence of numbers and use space for separation:");
