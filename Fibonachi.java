@@ -4,14 +4,21 @@ import java.util.Scanner;
  * This program checks whether the number entered from the keyboard is a nonnegative number of sequence Fibonachi.
  */
 public class Fibonachi {
-  public int InputNumber() {
+  
+  /**
+   * In this method, data is entered from the keyboard.
+   */
+  public int inputNumber() {
     System.out.println("Please enter a number:");
     Scanner number = new Scanner(System.in);
     int numberInt = number.nextInt();
     return numberInt;
   }
-  
-  public boolean TestFibonachi(int numberInt) {
+ 
+  /**
+   * This method test whether the entered number is the number of sequence Fibonachi. 
+   */ 
+  public boolean testFibonachi(int numberInt) {
     if (numberInt == 0 || numberInt == 1) {
       return true;
     } else { 
@@ -30,7 +37,10 @@ public class Fibonachi {
     return false;
   }
   
-  public void OutputResult (Boolean resultOfTest) {
+  /**
+   * This method outputs the result of this program. 
+   */ 
+  public void outputResult (Boolean resultOfTest) {
     if (resultOfTest) {
       System.out.println("It's number of sequence Febonachi");
     } else {
@@ -40,6 +50,6 @@ public class Fibonachi {
   
   public static void main (String[] args) {
     Fibonachi fibonachiNumber = new Fibonachi();
-    fibonachiNumber.OutputResult(fibonachiNumber.TestFibonachi(fibonachiNumber.InputNumber()));      	
+    fibonachiNumber.outputResult(fibonachiNumber.testFibonachi(fibonachiNumber.inputNumber()));      	
   }
 }
