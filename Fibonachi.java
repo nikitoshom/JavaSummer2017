@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class Fibonachi {
   
   /**
-   * In this method, data is entered from the keyboard.
+   * In this method, data is entered from the keyboard. It return number entered from keyboard.
+   * 
+   * @return number with which we will work
    */
   public int inputNumber() {
     System.out.println("Please enter a number:");
@@ -17,6 +19,10 @@ public class Fibonachi {
  
   /**
    * This method test whether the entered number is the number of sequence Fibonachi. 
+   * Method get number as a parameter which we want to test, and return true or false depending on the passage of the test.
+   * 
+   * @param number which we entered from keyboard
+   * @return true if number is a number of sequence of Fibonachi and false if don't
    */ 
   public boolean testFibonachi(int numberInt) {
     if (numberInt == 0 || numberInt == 1) {
@@ -39,6 +45,8 @@ public class Fibonachi {
   
   /**
    * This method outputs the result of this program. 
+   * 
+   * @param boolean result of previos method (testFibonachi()).
    */ 
   public void outputResult (Boolean resultOfTest) {
     if (resultOfTest) {
