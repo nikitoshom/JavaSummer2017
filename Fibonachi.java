@@ -27,29 +27,28 @@ public class Fibonachi {
   public boolean testFibonachi(int numberInt) {
     if (numberInt == 0 || numberInt == 1) {
       return true;
-    } else { 
-      int firstNumber = 1;
-      int secondNumber = 1;
-      int thirdNumber = 1;
-      for (int i = 1; i <= numberInt; i++) {
-        secondNumber = firstNumber;
-        firstNumber = thirdNumber;
-        thirdNumber = firstNumber + secondNumber;			
-        if (thirdNumber == numberInt) {
-          return true;
-        }			
-      }	
-    }	
+    }
+    int firstNumber = 1;
+    int secondNumber = 1;
+    int thirdNumber = 1;
+    for (int i = 1; i <= numberInt; i++) {
+      secondNumber = firstNumber;
+      firstNumber = thirdNumber;
+      thirdNumber = firstNumber + secondNumber;			
+      if (thirdNumber == numberInt) {
+        return true;
+      }
+    }
     return false;
   }
   
   /**
    * This method outputs the result of this program. 
    * 
-   * @param boolean result of previos method (testFibonachi()).
+   * @param boolean result which in this program say that the number is number of sequence Fibonachi.
    */ 
-  public void outputResult (Boolean resultOfTest) {
-    if (resultOfTest) {
+  public void outputResult (Boolean isNumberFibonachi) {
+    if (isNumberFibonachi) {
       System.out.println("It's number of sequence Febonachi");
     } else {
       System.out.println("It isn't number of sequence Febonachi");
