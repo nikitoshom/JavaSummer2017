@@ -9,16 +9,17 @@ public class Sequence {
     Scanner numbers = new Scanner(System.in);
     String string = numbers.nextLine();
     String stringSeparation[] = string.split(" "); 
-	  if (stringSeparation.length == 1) {
+    if (stringSeparation.length == 1) {
       System.out.println("It isn't a sequence, it is a number.");
-	  } else {
+    } else {
       for (int i = 0; i < stringSeparation.length - 1; i++) {
         if (Integer.parseInt(stringSeparation[i]) > Integer.parseInt(stringSeparation[i + 1])) { 
           System.out.println("Decreasing sequence");
-		      return;
+          return;
         }
-	    }
+      }
       System.out.println("Nondecreasing sequence");
     }
   }
 }
+ 
