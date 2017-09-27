@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 /**
  * This program takes two string and change random sequnce of one string with random sequnce of another string
