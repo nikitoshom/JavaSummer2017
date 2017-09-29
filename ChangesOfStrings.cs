@@ -1,41 +1,48 @@
-﻿using System;
+using System;
 /*
  * Some functions which help chande random sequnces of strings
  */
 
 namespace DEV_9_TwoStrings
 {
-  class ChangesOfStrings
+  class WorkWithStrings
   {
     /*
-     * This method gives start and end indices sequences of strings
+     * This method find start and end indices sequences of strings
      * 
-     * @param twoStrings object with tow strings
+     * @param firstString 
+     * @param secondString
+     * @return array of changed strings
      */
-    public void randomChangesBetweenString(TwoStrings twoStrings)
+    public String[] FindRandomIndexesAndСhangesRandomlyPartOfStrings (String firstString, String secondString)
     {
-      int firstIndexOfChanges = new Random().Next(0, twoStrings.getFirstString().Length - 1);
-      int firstLengthOfChanges = new Random().Next(0, twoStrings.getFirstString().Length - firstIndexOfChanges);
-      int secondIndexOfChanges = new Random().Next(0, twoStrings.getSecondString().Length - 1);
-      int secondLengthOfChanges = new Random().Next(0, twoStrings.getSecondString().Length - secondIndexOfChanges);
-      Changes(firstIndexOfChanges, firstLengthOfChanges, secondIndexOfChanges, secondLengthOfChanges, twoStrings);
+      int[] firstIndexesOfChanges = new int[2];
+      firstIndexesOfChanges [0] = new Random().Next(0, firstString.Length - 1); 
+      firstIndexesOfChanges [1] = new Random().Next(0, secondString.Length - 1);
+      int[] lengthOfChanges = new int[2];
+      lengthOfChanges[0] = new Random().Next(0, firstString.Length - firstIndexesOfChanges[0]);
+      lengthOfChanges[1] = new Random().Next(0, secondString.Length - firstIndexesOfChanges[1]);
+      String[] changedStrings = new String[2];
+      changedStrings[0] = firstString;
+      changedStrings[1] = secondString;
+      return СhangesRandomlyPartOfString(firstIndexesOfChanges, lengthOfChanges, changedStrings);
     }
 
     /*
-     * Replaces strings on strings with sequnces. Symbols "|" show where sequnce wich changed in each string.
+     * Replaces strings on strings with sequnces
      * 
-     * @param firstIndexOfChanges
-     * @param firstLengthOfChanges
-     * @param secondIndexOfChanges
-     * @param secondLengthOfChanges
-     * @param twoStrings
+     * @param firstIndexesOfChanges
+     * @param lengthOfChanges
+     * @param changedStrings
+     * return array of changed String
      */
-    public void Changes(int firstIndexOfChanges, int firstLengthOfChanges, int secondIndexOfChanges, int secondLengthOfChanges, TwoStrings twoStrings)
+    public String[] СhangesRandomlyPartOfString(int[] firstIndexesOfChanges, int[] lengthOfChanges, String[] changedStrings)
     {
-      String[] parstsOfFirstStrigAndSequence = DivideIntoParts(firstIndexOfChanges, firstLengthOfChanges, twoStrings.getFirstString());
-      String[] parstsOfSecondStrigAndSequence = DivideIntoParts(secondIndexOfChanges, secondLengthOfChanges, twoStrings.getSecondString());
-      twoStrings.setFirstString(parstsOfFirstStrigAndSequence[0] +"|"+ parstsOfSecondStrigAndSequence[1]+"|"+ parstsOfFirstStrigAndSequence[2]);
-      twoStrings.setSecondString(parstsOfSecondStrigAndSequence[0] + "|" + parstsOfFirstStrigAndSequence[1] + "|" + parstsOfSecondStrigAndSequence[2]);
+      String[] parstsOfFirstStrigAndSequence = DivideIntoParts(firstIndexesOfChanges[0], lengthOfChanges[0], changedStrings[0]);
+      String[] parstsOfSecondStrigAndSequence = DivideIntoParts(firstIndexesOfChanges[1], lengthOfChanges[1], changedStrings[1]);
+      changedStrings[0] = parstsOfFirstStrigAndSequence[0] + parstsOfSecondStrigAndSequence[1] + parstsOfFirstStrigAndSequence[2];
+      changedStrings[1] = parstsOfSecondStrigAndSequence[0] + parstsOfFirstStrigAndSequence[1] + parstsOfSecondStrigAndSequence[2];
+      return changedStrings;
     }
 
     /*
