@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 /**
  * This program takes two string and change random sequnce of one string with random sequnce of another string
@@ -10,16 +10,16 @@ namespace DEV_9_TwoStrings
   {
     static void Main(string[] args)
     {
-      String firstString = "Hellow, how are you?";
-      String secondString = "My name is Nikita";
-      TwoStrings twoStrings = new TwoStrings(firstString, secondString);
-      Console.WriteLine(twoStrings.getFirstString());
-      Console.WriteLine(twoStrings.getSecondString());
-      ChangesOfStrings changesOfStrings = new ChangesOfStrings();
-      changesOfStrings.randomChangesBetweenString(twoStrings);
-      Console.WriteLine(twoStrings.getFirstString());
-      Console.WriteLine(twoStrings.getSecondString());
+      const String firstString = "Hello, how are you?";
+      const String secondString = "My name is Nikita";
+      Console.WriteLine(firstString);
+      Console.WriteLine(secondString);
+      WorkWithStrings workWithStrings = new WorkWithStrings();
+      String[] changedStrings = workWithStrings.FindRandomIndexesAndСhangesRandomlyPartOfStrings(firstString,secondString);
+      Console.WriteLine(changedStrings[0]);
+      Console.WriteLine(changedStrings[1]);
       Console.ReadKey();
     }
   }
 }
+
