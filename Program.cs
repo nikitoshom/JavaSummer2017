@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DEV_11_Translit
 {
@@ -9,11 +9,18 @@ namespace DEV_11_Translit
   {
     static void Main(string[] args)
     {
-      ConvertString dictionary = new ConvertString();     
-      string str = Console.ReadLine();
-      str = dictionary.Transliter(str);
-      Console.WriteLine(str);
-      Console.ReadKey();      
+      try
+      {
+        ConvertString dictionary = new ConvertString();
+        string str = Console.ReadLine();
+        str = dictionary.Transliter(str);
+        Console.WriteLine(str);
+        Console.ReadKey();
+      }
+      catch (Exception exc)
+      {
+        Console.WriteLine(exc.Message);
+      }
     }
   }
 }
