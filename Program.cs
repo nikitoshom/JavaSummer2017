@@ -11,9 +11,9 @@ namespace DEV_11_Translit
     {
       try
       {
-        ConvertString dictionary = new ConvertString();
+        StringConvertor stringConvertor = new StringConvertor();
         string str = Console.ReadLine();
-        str = dictionary.Transliter(str);
+        str = stringConvertor.Translaite(str);
         Console.WriteLine(str);
         Console.ReadKey();
       }
